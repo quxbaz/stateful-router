@@ -1,7 +1,7 @@
 {
   "name": "stateful-router",
   "description": "Tiny, declarative, unopinionated, library-agnostic state-based router for React apps.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "quxbaz",
   "license": "MIT",
   "homepage": "https://github.com/quxbaz/stateful-router",
