@@ -9,7 +9,7 @@ module.exports = (env='test') => ({
 
   output: env === 'build' ? {
     filename: 'stateful-router.js',
-    library: 'statefulRouter',
+    library: 'stateful-router',
     libraryTarget: 'umd',
   } : {
     filename: 'bundle.js',
