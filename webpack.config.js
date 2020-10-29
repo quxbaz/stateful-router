@@ -9,6 +9,8 @@ module.exports = (env='test') => ({
 
   output: env === 'build' ? {
     filename: 'stateful-router.js',
+    library: 'statefulRouter',
+    libraryTarget: 'umd',
   } : {
     filename: 'bundle.js',
     publicPath: '/assets/',
@@ -47,8 +49,8 @@ module.exports = (env='test') => ({
   },
 
   externals: {
-    'React': 'react',
-    'ReactDOM': 'react-dom',
+    'react': 'React',
+    'react-dom': 'ReactDOM',
   },
 
 })
