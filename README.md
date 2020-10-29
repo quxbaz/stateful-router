@@ -1,16 +1,16 @@
-# state-router
-`state-router` is a tiny (12k), straightforward, declarative routing
+# stateful-router
+`stateful-router` is a tiny (12k), straightforward, declarative routing
 library for React. It has two components, `<Router>` and `<Route>`. It
 is unopinionated. It has no knowledge of the the URL bar, history,
 Redux, or any browser APIs. You simply pass a string into the `path`
 property of `<Router>`. The string can come from anywhere. Typically
-it would represent some part of the current URL. `state-router` does
+it would represent some part of the current URL. `stateful-router` does
 not interface with the browser.
 
 All it does is conditionally render routes based on the `path` value
 you provide.
 
-Under the hood, `state-router` uses the React context API.
+Under the hood, `stateful-router` uses the React context API.
 
 
 ## Table of contents
@@ -23,10 +23,10 @@ Under the hood, `state-router` uses the React context API.
 
 
 ## Basic usage
-To use `state-router` you create a top-level `<Router>` and child
+To use `stateful-router` you create a top-level `<Router>` and child
 `<Route>` components:
 ```javascript
-import {Router, Route} from 'state-router'
+import {Router, Route} from 'stateful-router'
 
 const path = '/users'
 
@@ -96,7 +96,7 @@ const mapState = (state) => ({
 
 export default connect(mapState)(App)
 ```
-This is just one example. `state-router` is not tightly bound to Redux or any
+This is just one example. `stateful-router` is not tightly bound to Redux or any
 particular state management library.
 
 

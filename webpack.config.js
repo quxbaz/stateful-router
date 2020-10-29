@@ -8,7 +8,7 @@ module.exports = (env='test') => ({
     : path.resolve(__dirname, 'test/index'),
 
   output: env === 'build' ? {
-    filename: 'state-router.js',
+    filename: 'stateful-router.js',
   } : {
     filename: 'bundle.js',
     publicPath: '/assets/',
@@ -37,7 +37,7 @@ module.exports = (env='test') => ({
 
   resolve: {
     alias: {
-      'state-router': path.resolve(__dirname, 'src'),
+      'stateful-router': path.resolve(__dirname, 'src'),
     },
     modules: [
       // Enables absolute imports relative to the src/ directory.

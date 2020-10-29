@@ -1,5 +1,5 @@
 import expect from 'expect'
-import {__internals, isMatch, getParams} from 'state-router/path-util'
+import {__internals, isMatch, getParams} from 'stateful-router/path-util'
 
 const {exists, split, isParam, isSubMatch} = __internals
 

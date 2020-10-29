@@ -1,6 +1,6 @@
 import expect from 'expect'
 import React from 'react'
-import {Router, Route} from 'state-router'
+import {Router, Route} from 'stateful-router'
 import {nodeTextIs} from './test-util'
 
 describe("Smoke tests", () => {
