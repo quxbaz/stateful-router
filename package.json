@@ -1,7 +1,7 @@
 {
-  "name": "@quxbaz/state-router",
+  "name": "state-router",
   "description": "Tiny, declarative, unopinionated, library-agnostic state-based router for React apps.",
-  "version": "3.0.7",
+  "version": "1.0.0",
   "author": "quxbaz",
   "license": "MIT",
   "homepage": "https://github.com/quxbaz/state-router",
