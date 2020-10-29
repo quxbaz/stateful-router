@@ -16,6 +16,10 @@ module.exports = (env='test') => ({
     publicPath: '/assets/',
   },
 
+  optimization: {
+    minimize: false,
+  },
+
   devtool: 'source-map',
 
   devServer: {
