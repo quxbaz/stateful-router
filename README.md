@@ -1,11 +1,11 @@
 # stateful-router
-`stateful-router` is a tiny (12k), straightforward, declarative routing
+`stateful-router` is a tiny, straightforward, declarative routing
 library for React. It has two components, `<Router>` and `<Route>`. It
 is unopinionated. It has no knowledge of the the URL bar, history,
 Redux, or any browser APIs. You simply pass a string into the `path`
 property of `<Router>`. The string can come from anywhere. Typically
-it would represent some part of the current URL. `stateful-router` does
-not interface with the browser.
+it would represent some part of the current URL. `stateful-router`
+does not interface with the browser.
 
 All it does is conditionally render routes based on the `path` value
 you provide.
