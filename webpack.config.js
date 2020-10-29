@@ -16,7 +16,8 @@ module.exports = (env='test') => ({
     publicPath: '/assets/',
   },
 
-  devtool: 'module-source-map',
+  devtool: 'source-map',
+
   devServer: {
     historyApiFallback: true,
   },
