@@ -75,6 +75,16 @@ describe("path-util", () => {
   })
 
   describe("isMatch", () => {
+    it("isMatch('', '/') -> true", () => {
+      expect(
+        isMatch('', '/')
+      ).toBe(true)
+    })
+    it("isMatch('/', '/') -> true", () => {
+      expect(
+        isMatch('/', '/')
+      ).toBe(true)
+    })
     it("isMatch('/one', '/one') -> true", () => {
       expect(
         isMatch('/one', '/one')
