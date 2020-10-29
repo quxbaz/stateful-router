@@ -47,8 +47,8 @@ module.exports = (env='test') => ({
   },
 
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
+    'React': 'react',
+    'ReactDOM': 'react-dom',
   },
 
 })
