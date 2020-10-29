@@ -36,6 +36,8 @@ const isSubMatch = (path, route) => (
 
 // Returns true if the route is a valid match for the path.
 const isMatch = (path, route) => {
+  if (route === '' || route === '/')  // This is a special case.
+    return path === '' || path === '/'
   const paths = split(path)
   const routes = split(route)
   if (routes.length > paths.length)
