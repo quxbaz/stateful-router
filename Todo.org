@@ -6,3 +6,16 @@ Todo
     all non-matching paths?
   - [ ] <Switch> component that *only* renders the first route that
     matches.
+  - [ ] Validator function property.
+    <Route route='/:id/:name' validator={filter}>
+    (validator: Dict<(param, params) => boolean>) => Dict<boolean>
+    Takes a dictionary of names and returns a dictionary of booleans.
+    Example:
+      users = {1: 'bob', 2: 'george'}
+      <Route route='/users/:name' validator={validator}>
+
+    const validator =  {
+      name: (name, params) => name === 'bob',
+    }
+
+    Validates the 'name' param and only matches when 'name' is 'bob.
