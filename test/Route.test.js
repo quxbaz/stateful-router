@@ -107,7 +107,7 @@ describe("Route: smoke tests: rendering into DOM", () => {
   })
   it("Renders nothing.", () => {
     render(
-      <Router path='/nothing'>
+      <Router path='/nowhere'>
         <Route route='/'>Empty</Route>,
       </Router>,
       dom
@@ -115,7 +115,7 @@ describe("Route: smoke tests: rendering into DOM", () => {
   })
   it("Renders nothing.", () => {
     render(
-      <Router path='nothing'>
+      <Router path='nowhere'>
         <Route route='/'>Empty</Route>
         <Route route='/lists'>/lists</Route>
       </Router>,
@@ -125,7 +125,7 @@ describe("Route: smoke tests: rendering into DOM", () => {
   it("Renders nothing.", () => {
     render(
       <div>
-        <Router path='/nothing'>
+        <Router path='/nowhere'>
           <Route route='/'>Empty</Route>,
         </Router>
       </div>,
@@ -172,7 +172,84 @@ describe("Route: array route prop", () => {
 })
 
 describe("Route: array route prop, getParams", () => {
-  it("--", () => {
-
+  it("Gets the params from the first matching route.", () => {
+    nodeTextIs(
+      <Router path='/users/42'>
+        <Route route={['/users/:id', '/users']}>
+          <User />
+        </Route>
+      </Router>,
+      '42'
+    )
+  })
+  it("Gets the params from the second matching route.", () => {
+    nodeTextIs(
+      <Router path='/users/42'>
+        <Route route={['/nowhere', '/users/:id']}>
+          <User />
+        </Route>
+      </Router>,
+      '42'
+    )
+  })
+  it("Gets the params from the second matching route.", () => {
+    nodeTextIs(
+      <Router path='/users/42'>
+        <Route route={['/users/', '/users/:id']}>
+          <User />
+        </Route>
+      </Router>,
+      '42'
+    )
+  })
+  it("Gets the params from the second matching route.", () => {
+    nodeTextIs(
+      <Router path='/users/42'>
+        <Route route={['/users/', '/users/:id', '/users']}>
+          <User />
+        </Route>
+      </Router>,
+      '42'
+    )
+  })
+  it("Gets no params matching the first route.", () => {
+    nodeTextIs(
+      <Router path='/users/42'>
+        <Route route={['/users', '/users/:id']}>
+          <User />
+        </Route>
+      </Router>,
+      ''
+    )
+  })
+  it("Gets multiple params.", () => {
+    nodeTextIs(
+      <Router path='/users/bob/42'>
+        <Route route={['/users/:name/:age']}>
+          <Person />
+        </Route>
+      </Router>,
+      'bob,42'
+    )
+  })
+  it("Gets multiple params with multiple items.", () => {
+    nodeTextIs(
+      <Router path='/users/bob/42'>
+        <Route route={['/nowhere', '/users/:name/:age']}>
+          <Person />
+        </Route>
+      </Router>,
+      'bob,42'
+    )
+  })
+  it("Gets multiple params with multiple items.", () => {
+    nodeTextIs(
+      <Router path='/users/bob/42/hello'>
+        <Route route={['/nowhere', '/users/:name/:age']}>
+          <Person />
+        </Route>
+      </Router>,
+      'bob,42'
+    )
   })
 })
