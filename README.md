@@ -17,9 +17,10 @@ Under the hood, `stateful-router` uses the React context API.
 1. [Basic usage](#basic-usage)
 2. [Capturing params](#capturing-params)
 3. [Match exact paths](#match-exact-paths)
-4. [Example usage with react-redux](#example-usage-with-react-redux)
-5. [Navigation](#navigation)
-6. [License](#license)
+4. [Match multiple paths](#match-multiple-paths)
+5. [Example usage with react-redux](#example-usage-with-react-redux)
+6. [Navigation](#navigation)
+7. [License](#license)
 
 
 ## Basic usage
@@ -80,6 +81,18 @@ Match exact paths with a trailing `/` in your routes.
   <Route route='/about/'>Does not match</Route>
 </Router>
 ```
+
+
+## Match multiple paths
+You can pass an array into `<Route` to match many paths.
+```javascript
+<Route route={['/nowhere', '/users/:id']}>
+  Matches either 'nowhere' or 'users/:id'. 'nowhere' will take precedence because
+  it was specified first. Params will only be available to children when '/users/:id'
+  is matched before any preceding routes.
+</Route>
+```
+The route that matches first will be the one to provide params to its children.
 
 
 ## Example usage with react-redux
