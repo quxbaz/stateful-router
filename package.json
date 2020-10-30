@@ -5,7 +5,7 @@
   "author": "quxbaz",
   "license": "MIT",
   "homepage": "https://github.com/quxbaz/stateful-router",
-  "main": "dist/stateful-router.js",
+  "main": "lib/stateful-router.js",
   "repository": {
     "type": "git",
     "url": "github.com/quxbaz/stateful-router.git"

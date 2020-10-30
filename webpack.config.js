@@ -13,6 +13,7 @@ module.exports = (env='production') => ({
   } : {
     filename: 'stateful-router.js',
     library: 'stateful-router',
+    path: path.resolve(__dirname, 'lib/'),
     libraryTarget: 'umd',
   },
 
