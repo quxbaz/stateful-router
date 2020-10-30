@@ -1,7 +1,8 @@
 node_modules/
-auto-save-list/
 .log/
+auto-save-list/
 stats.json
+package-lock.json
 webpack.config.js
 src/
 test/
