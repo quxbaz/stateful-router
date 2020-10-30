@@ -53,9 +53,9 @@ module.exports = (env='production') => ({
     ],
   },
 
-  externals: {
+  externals: env === 'production' ? {
     'react': true,
     'prop-types': true,
-  },
+  } : {},
 
 })
