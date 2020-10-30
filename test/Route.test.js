@@ -7,7 +7,6 @@ const User = ({id}) => <div>{id}</div>
 const Person = ({name, age}) => <div>{name},{age}</div>
 
 describe("Route", () => {
-
   it("Matches a param.", () => {
     nodeTextIs(
       <Router path='/users/42'>
@@ -16,7 +15,6 @@ describe("Route", () => {
       'here'
     )
   })
-
   it("Child retains its own props.", () => {
     nodeTextIs(
       <Router path='/users/42'>
@@ -27,7 +25,6 @@ describe("Route", () => {
       'bob,42'
     )
   })
-
   it("Multiple children retain their props.", () => {
     nodeTextIs(
       <Router path='/users/42'>
@@ -38,7 +35,6 @@ describe("Route", () => {
       'bob,42|carl,23'
     )
   })
-
   it("Captures and renders a param.", () => {
     nodeTextIs(
       <Router path='/users/42'>
@@ -49,7 +45,6 @@ describe("Route", () => {
       '42'
     )
   })
-
   it("Multiple routes capture and render params.", () => {
     nodeTextIs(
       <Router path='/users/42'>
@@ -63,7 +58,6 @@ describe("Route", () => {
       '4242'
     )
   })
-
   it("Captures and renders 2 params.", () => {
     const Account = ({id, name}) => <div>{id},{name}</div>
     nodeTextIs(
@@ -75,7 +69,6 @@ describe("Route", () => {
       '42,bob'
     )
   })
-
   it("Renders one route with params; ignores another.", () => {
     nodeTextIs(
       <Router path='/users/42'>
@@ -89,7 +82,6 @@ describe("Route", () => {
       '42'
     )
   })
-
 })
 
 describe("Route, smoke tests: rendering into DOM", () => {
