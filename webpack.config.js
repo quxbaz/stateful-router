@@ -1,19 +1,19 @@
 var path = require('path')
 
-// env = 'build' | 'test'
-module.exports = (env='test') => ({
+// env = 'production' | 'development'
+module.exports = (env='production') => ({
 
-  entry: env === 'build'
-    ? path.resolve(__dirname, 'src/index')
-    : path.resolve(__dirname, 'test/index'),
+  entry: env === 'development'
+    ? path.resolve(__dirname, 'test/index')
+    : path.resolve(__dirname, 'src/index'),
 
-  output: env === 'build' ? {
+  output: env === 'development' ? {
+    filename: 'bundle.js',
+    publicPath: '/assets/',
+  } : {
     filename: 'stateful-router.js',
     library: 'stateful-router',
     libraryTarget: 'umd',
-  } : {
-    filename: 'bundle.js',
-    publicPath: '/assets/',
   },
 
   optimization: {
@@ -54,8 +54,8 @@ module.exports = (env='test') => ({
   },
 
   externals: {
-    'React': 'react',
-    'ReactDOM': 'react-dom',
+    'react': true,
+    'prop-types': true,
   },
 
 })
