@@ -84,43 +84,6 @@ describe("Route", () => {
   })
 })
 
-describe("Route: array routes", () => {
-  it("Accepts an array prop.", () => {
-    <Route route={[]}></Route>
-  })
-  it("Renders nothing.", () => {
-    nodeIsEmpty(
-      <Router path='/nowhere'>
-        <Route route={['/here']}>here</Route>
-      </Router>
-    )
-  })
-  it("Renders.", () => {
-    nodeTextIs(
-      <Router path='/here'>
-        <Route route={['/here']}>here</Route>
-      </Router>,
-      'here'
-    )
-  })
-  it("Matches the first route.", () => {
-    nodeTextIs(
-      <Router path='/one'>
-        <Route route={['/one', '/two']}>here</Route>
-      </Router>,
-      'here'
-    )
-  })
-  it("Matches the second route.", () => {
-    nodeTextIs(
-      <Router path='/two'>
-        <Route route={['/one', '/two']}>here</Route>
-      </Router>,
-      'here'
-    )
-  })
-})
-
 describe("Route: smoke tests: rendering into DOM", () => {
   const dom = document.getElementById('test-area')
   afterEach(() => {
@@ -168,5 +131,48 @@ describe("Route: smoke tests: rendering into DOM", () => {
       </div>,
       dom
     )
+  })
+})
+
+describe("Route: array route prop", () => {
+  it("Accepts an array prop.", () => {
+    <Route route={[]}></Route>
+  })
+  it("Renders nothing.", () => {
+    nodeIsEmpty(
+      <Router path='/nowhere'>
+        <Route route={['/here']}>here</Route>
+      </Router>
+    )
+  })
+  it("Renders.", () => {
+    nodeTextIs(
+      <Router path='/here'>
+        <Route route={['/here']}>here</Route>
+      </Router>,
+      'here'
+    )
+  })
+  it("Matches the first route.", () => {
+    nodeTextIs(
+      <Router path='/one'>
+        <Route route={['/one', '/two']}>here</Route>
+      </Router>,
+      'here'
+    )
+  })
+  it("Matches the second route.", () => {
+    nodeTextIs(
+      <Router path='/two'>
+        <Route route={['/one', '/two']}>here</Route>
+      </Router>,
+      'here'
+    )
+  })
+})
+
+describe("Route: array route prop, getParams", () => {
+  it("--", () => {
+
   })
 })
