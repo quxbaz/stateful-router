@@ -84,11 +84,12 @@ Match exact paths with a trailing `/` in your routes.
 
 
 ## Match multiple paths
-You can pass an array into `<Route` to match many paths.
+You can pass an array into `<Route>` to match many paths.
 ```javascript
 <Route route={['/nowhere', '/users/:id']}>
-  Matches either 'nowhere' or 'users/:id'. 'nowhere' will take precedence because
-  it was specified first. Params will only be available to children when '/users/:id'
+  Matches either 'nowhere' or 'users/:id'. 'nowhere' will
+  take precedence because it was specified first. Params
+  will only be available to children when '/users/:id'
   is matched before any preceding routes.
 </Route>
 ```
@@ -114,11 +115,12 @@ particular state management library.
 
 
 ## Navigation
-Your state store should be the primary source of truth. The browser's
-URL should derive its value from your store, not the other way
-around. Your app should be able to function in the absence of any URL
-bar. The URL is just another piece of data as far as your app is
-concerned. To change the URL with Redux, for example:
+Your state store should be the primary source of truth.
+The browser's URL should derive its value from your store,
+not the other way around. Your app should be able to
+function in the absence of any URL bar. The URL is just
+another piece of data as far as your app is concerned. To
+change the URL with Redux, for example:
 ```javascript
 // NavBar.js
 const NavBar = () => (
