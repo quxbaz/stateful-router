@@ -2,3 +2,4 @@ node_modules/
 .log/
 auto-save-list/
 stats.json
+/lib
