@@ -1,6 +1,7 @@
 import React from 'react'
+import {render, unmountComponentAtNode} from 'react-dom'
 import {Router, Route} from 'stateful-router'
-import {nodeTextIs, nodeIsEmpty} from './test-util'
+import {nodeTextIs} from './test-util'
 
 const User = ({id}) => <div>{id}</div>
 const Person = ({name, age}) => <div>{name},{age}</div>
@@ -89,4 +90,54 @@ describe("Route", () => {
     )
   })
 
+})
+
+describe("Route, smoke tests: rendering into DOM", () => {
+  const dom = document.getElementById('test-area')
+  afterEach(() => {
+    unmountComponentAtNode(dom)
+    dom.innerHTML = ''
+  })
+  it("Renders matching route.", () => {
+    render(
+      <Router path='/'>
+        <Route route='/'>Empty</Route>
+        <Route route='/lists'>/lists</Route>
+      </Router>,
+      dom
+    )
+  })
+  it("Renders nothing.", () => {
+    render(
+      <Route route='/'>Empty</Route>,
+      dom
+    )
+  })
+  it("Renders nothing.", () => {
+    render(
+      <Router path='/nothing'>
+        <Route route='/'>Empty</Route>,
+      </Router>,
+      dom
+    )
+  })
+  it("Renders nothing.", () => {
+    render(
+      <Router path='nothing'>
+        <Route route='/'>Empty</Route>
+        <Route route='/lists'>/lists</Route>
+      </Router>,
+      dom
+    )
+  })
+  it("Renders nothing.", () => {
+    render(
+      <div>
+        <Router path='/nothing'>
+          <Route route='/'>Empty</Route>,
+        </Router>
+      </div>,
+      dom
+    )
+  })
 })
