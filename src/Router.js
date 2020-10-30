@@ -8,6 +8,10 @@ const Router = ({children, path}) => (
   </RouterContext.Provider>
 )
 
+Router.defaultProps = {
+  path: '',
+}
+
 Router.propTypes = {
   path: PropTypes.string,
 }
