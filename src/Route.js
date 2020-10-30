@@ -17,7 +17,10 @@ const Route = ({children, route}) => {
 }
 
 Route.propTypes = {
-  route: PropTypes.string,
+  route: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
 }
 
 export default Route
