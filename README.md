@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/stateful-router.svg)](https://badge.fury.io/js/stateful-router)
+
 # stateful-router
 `stateful-router` is a tiny, straightforward, declarative routing
 library for React. It has two components, `<Router>` and `<Route>`. It
