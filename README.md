@@ -138,8 +138,9 @@ const setUrl = (url) => ({
 
 // app.js
 //
-// Sync the browser's URL with your store state. For simplicity we're using
-// store.subscribe(), but middleware would probably be more appropriate here.
+// Sync the browser's URL with your store state. For
+// simplicity we're using store.subscribe(), but
+// middleware would probably be more appropriate here.
 store.subscribe(() => {
   const {url} = store.getState()
   if (url !== location.pathname)
