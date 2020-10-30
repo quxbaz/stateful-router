@@ -4,3 +4,5 @@ Todo
   - [ ] Have a way to capture 404s. You need a way to catch paths that
     *don't* match. What if you wanted a single 404 page that catches
     all non-matching paths?
+  - [ ] <Switch> component that *only* renders the first route that
+    matches.
