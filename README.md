@@ -89,10 +89,8 @@ Match exact paths with a trailing `/` in your routes.
 You can pass an array into `<Route>` to match many paths.
 ```javascript
 <Route route={['/nowhere', '/users/:id']}>
-  Matches either 'nowhere' or 'users/:id'. 'nowhere' will
-  take precedence because it was specified first. Params
-  will only be available to children when '/users/:id'
-  is matched before any preceding routes.
+  Matches either 'nowhere' or 'users/:id'. 'nowhere'
+  has priority because it was specified first.
 </Route>
 ```
 The route that matches first will be the one to provide params to its children.
