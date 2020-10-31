@@ -1,22 +1,18 @@
 const path = require('path')
 const abs = (...args) => path.resolve(__dirname, ...args)
 
-// env = 'production' | 'development'
 module.exports = (env='production') => ({
 
   entry: env === 'development'
-    ? abs('test/index')
-    : abs('src/index'),
+    ? abs('test/index.js')
+    : abs('src/index.js'),
 
-  output: env === 'development' ? {
-    filename: 'bundle.js',
-    publicPath: '/assets/',
-  } : {
+  output: env === 'production' ? {
     filename: 'stateful-router.js',
-    library: 'stateful-router',
     path: abs('lib/'),
+    library: 'stateful-router',
     libraryTarget: 'umd',
-  },
+  } : {},
 
   optimization: {
     minimize: false,
@@ -24,18 +20,11 @@ module.exports = (env='production') => ({
 
   devtool: 'source-map',
 
-  devServer: {
-    historyApiFallback: true,
-  },
-
   module: {
     rules: [
       {
         test: /\.js$/,
-        include: [
-          abs('./src'),
-          abs('./test'),
-        ],
+        include: [abs('./src'), abs('./test')],
         loader: 'babel-loader',
         query: {
           presets: ['@babel/preset-env', '@babel/preset-react']
@@ -49,8 +38,7 @@ module.exports = (env='production') => ({
       'stateful-router': abs('src'),
     },
     modules: [
-      // Enables absolute imports relative to the src/ directory.
-      abs('src'),
+      abs('src'),  // Enables absolute imports relative to the src/ directory.
       'node_modules',
     ],
   },
