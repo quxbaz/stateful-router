@@ -1,11 +1,12 @@
-var path = require('path')
+const path = require('path')
+const abs = (...args) => path.resolve(__dirname, ...args)
 
 // env = 'production' | 'development'
 module.exports = (env='production') => ({
 
   entry: env === 'development'
-    ? path.resolve(__dirname, 'test/index')
-    : path.resolve(__dirname, 'src/index'),
+    ? abs('test/index')
+    : abs('src/index'),
 
   output: env === 'development' ? {
     filename: 'bundle.js',
@@ -13,7 +14,7 @@ module.exports = (env='production') => ({
   } : {
     filename: 'stateful-router.js',
     library: 'stateful-router',
-    path: path.resolve(__dirname, 'lib/'),
+    path: abs('lib/'),
     libraryTarget: 'umd',
   },
 
@@ -32,8 +33,8 @@ module.exports = (env='production') => ({
       {
         test: /\.js$/,
         include: [
-          path.resolve(__dirname, './src'),
-          path.resolve(__dirname, './test'),
+          abs('./src'),
+          abs('./test'),
         ],
         loader: 'babel-loader',
         query: {
@@ -45,11 +46,11 @@ module.exports = (env='production') => ({
 
   resolve: {
     alias: {
-      'stateful-router': path.resolve(__dirname, 'src'),
+      'stateful-router': abs('src'),
     },
     modules: [
       // Enables absolute imports relative to the src/ directory.
-      path.resolve(__dirname, 'src'),
+      abs('src'),
       'node_modules',
     ],
   },
