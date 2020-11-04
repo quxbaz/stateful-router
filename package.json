@@ -41,6 +41,8 @@
   "scripts": {
     "start": "webpack-dev-server --content-base=public --port=5000",
     "test": "webpack-dev-server --env=development --content-base=test --port=5000",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "prepublishOnly": "npm run build",
+    "postpublish": "rm -r lib"
   }
 }
