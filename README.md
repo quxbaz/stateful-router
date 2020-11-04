@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/stateful-router.svg)](https://badge.fury.io/js/stateful-router)
+![npm](https://img.shields.io/npm/v/stateful-router)
 
 # stateful-router
 `stateful-router` is a tiny, straightforward, declarative routing
