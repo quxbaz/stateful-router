@@ -1,4 +1,4 @@
-![npm](https://img.shields.io/npm/v/stateful-router)
+[![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/stateful-router)
 
 # stateful-router
 `stateful-router` is a tiny, straightforward, declarative routing
