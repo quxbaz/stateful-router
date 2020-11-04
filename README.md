@@ -14,7 +14,7 @@ you provide.
 
 Under the hood, `stateful-router` uses the React context API.
 
-[License](#license)
+[License](#license).
 
 
 ## Table of contents
