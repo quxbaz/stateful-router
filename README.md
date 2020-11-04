@@ -14,6 +14,8 @@ you provide.
 
 Under the hood, `stateful-router` uses the React context API.
 
+[License](#license)
+
 
 ## Table of contents
 1. [Basic usage](#basic-usage)
@@ -22,7 +24,6 @@ Under the hood, `stateful-router` uses the React context API.
 4. [Match multiple paths](#match-multiple-paths)
 5. [Example usage with react-redux](#example-usage-with-react-redux)
 6. [Navigation](#navigation)
-7. [License](#license)
 
 
 ## Basic usage
