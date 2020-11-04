@@ -1,5 +1,8 @@
 Todo
 
+* Todo
+  - [ ] Use jest for testing.
+
 * Features
   - [ ] Have a way to capture 404s. You need a way to catch paths that
     *don't* match. What if you wanted a single 404 page that catches
