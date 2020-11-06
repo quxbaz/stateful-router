@@ -24,7 +24,7 @@
   isMatch? No
 */
 
-const exists = (value:string|null) => value != null && value !== ''
+const exists = (value:string) => value !== ''
 
 const split = (str:string) => str.split('/').filter(exists)
 

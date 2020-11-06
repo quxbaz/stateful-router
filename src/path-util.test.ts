@@ -4,17 +4,8 @@ const {exists, split, isParam, isSubMatch} = __internals
 describe("path-util", () => {
 
   describe("exists", () => {
-    test("exists(1) -> true", () => {
-      expect(exists(1)).toBe(true)
-    })
     test("exists('') -> false", () => {
       expect(exists('')).toBe(false)
-    })
-    test("exists(null) -> false", () => {
-      expect(exists(null)).toBe(false)
-    })
-    test("exists(undefined) -> false", () => {
-      expect(exists(undefined)).toBe(false)
     })
     test("exists('hello') -> true", () => {
       expect(exists('hello')).toBe(true)
