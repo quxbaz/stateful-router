@@ -6,6 +6,7 @@
     "declarationDir": "lib/",
     "declarationMap": true,
     "esModuleInterop": true,
+    "jsx": "react",
     "module": "es6",
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -14,6 +15,7 @@
     "strictNullChecks": true,
     "target": "es5",
   },
-  "include": ["src/**/*"],
+  "files": ["src/path-util.ts"],
+  // "include": ["src/**/*"],
   "exclude": ["node_modules/"],
 }
