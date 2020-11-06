@@ -15,7 +15,10 @@
     "strictNullChecks": true,
     "target": "es5",
   },
-  "files": ["src/path-util.ts"],
+  "files": [
+    "src/path-util.ts",
+    "src/path-util.test.ts",
+  ],
   // "include": ["src/**/*"],
   "exclude": ["node_modules/"],
 }
