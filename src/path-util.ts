@@ -24,18 +24,18 @@
   isMatch? No
 */
 
-const exists = (value) => value != null && value !== ''
+const exists = (value:string|null) => value != null && value !== ''
 
-const split = (str) => str.split('/').filter(exists)
+const split = (str:string) => str.split('/').filter(exists)
 
-const isParam = (route) => route.startsWith(':')
+const isParam = (route:string) => route.startsWith(':')
 
-const isSubMatch = (path, route) => (
+const isSubMatch = (path:string, route:string) => (
   path === route || isParam(route)
 )
 
 // Returns true if the route is a valid match for the path.
-const isMatch = (path, route) => {
+const isMatch = (path:string, route:string) => {
   if (route === '' || route === '/')  // This is a special case.
     return path === '' || path === '/'
   const paths = split(path)
@@ -52,7 +52,7 @@ const isMatch = (path, route) => {
 }
 
 // Extracts values from path given the keys from route.
-const getParams = (path, route) => {
+const getParams = (path:string, route:string): Record<string, string> => {
   const paths = split(path)
   const routes = split(route)
   return routes
