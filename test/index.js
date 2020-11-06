@@ -1,5 +1,0 @@
-import './smoke.test'
-import './basic-function.test'
-import './path-util.test'
-import './Router.test'
-import './Route.test'
