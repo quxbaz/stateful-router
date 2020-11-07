@@ -1,5 +1,5 @@
 import React from 'react'
-import {Router, Route} from 'stateful-router'
+import {Router, Route} from '../src'
 import {nodeTextIs, nodeIsEmpty} from './test-util'
 
 describe("Basic function", () => {

@@ -1,6 +1,5 @@
 import React from 'react'
-import Router from 'Router'
-import Route from 'Route'
+import {Router, Route} from '../src'
 import {nodeTextIs} from './test-util'
 
 describe("Smoke tests", () => {

@@ -1,4 +1,4 @@
-import {__internals, isMatch, getParams} from 'path-util'
+import {__internals, isMatch, getParams} from '../src/path-util'
 const {exists, split, isParam, isSubMatch} = __internals
 
 describe("path-util", () => {
