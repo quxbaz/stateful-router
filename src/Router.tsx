@@ -1,19 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {ReactNode, FunctionComponent} from 'react'
 import RouterContext from './RouterContext'
 
-const Router = ({children, path}) => (
+interface Props {
+  path: string,
+}
+
+const Router:FunctionComponent<Props> = ({children, path}) => (
   <RouterContext.Provider value={path}>
     {children}
   </RouterContext.Provider>
 )
-
-Router.defaultProps = {
-  path: '',
-}
-
-Router.propTypes = {
-  path: PropTypes.string,
-}
 
 export default Router
