@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    // "allowJs": true,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationDir": "lib/",
@@ -15,12 +15,6 @@
     "strictNullChecks": true,
     "target": "es5",
   },
-  "files": [
-    "src/path-util.ts",
-    "src/path-util.test.ts",
-    "src/Router.tsx",
-    "src/Route.tsx",
-  ],
-  // "include": ["src/**/*"],
-  // "exclude": ["node_modules/"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/"],
 }
