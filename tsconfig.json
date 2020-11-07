@@ -18,7 +18,9 @@
   "files": [
     "src/path-util.ts",
     "src/path-util.test.ts",
+    "src/Router.tsx",
+    "src/Route.tsx",
   ],
   // "include": ["src/**/*"],
-  "exclude": ["node_modules/"],
+  // "exclude": ["node_modules/"],
 }
