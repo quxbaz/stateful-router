@@ -2,6 +2,7 @@ import React, {ReactNode, FunctionComponent} from 'react'
 import RouterContext from './RouterContext'
 
 interface Props {
+  children?: any,
   path: string,
 }
 
