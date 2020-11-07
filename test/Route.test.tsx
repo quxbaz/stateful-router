@@ -1,6 +1,6 @@
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
-import {Router, Route} from 'stateful-router'
+import {Router, Route} from '../src'
 import {nodeTextIs, nodeIsEmpty} from './test-util'
 
 const User = ({id}) => <div>{id}</div>
