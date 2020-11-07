@@ -6,7 +6,7 @@ interface Props {
   path?: string,
 }
 
-const Router: FunctionComponent<Props> = ({children, path}) => (
+const Router: FunctionComponent<Props> = ({children, path=''}) => (
   <RouterContext.Provider value={path}>
     {children}
   </RouterContext.Provider>
