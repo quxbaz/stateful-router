@@ -15,10 +15,6 @@
     "strictNullChecks": true,
     "target": "es5",
   },
-  // "files": [
-  //   "test/path-util.test.ts",
-  //   "test/smoke.test.tsx",
-  // ],
   "include": [
     "src/**/*",
     "test/**/*",
