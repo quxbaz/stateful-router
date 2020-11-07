@@ -3,7 +3,6 @@ import {Router, Route} from '../src'
 import {nodeTextIs, nodeIsEmpty} from './test-util'
 
 describe("Basic function", () => {
-
   it("Renders a matching route.", () => {
     nodeTextIs(
       <Router path='/users'>
@@ -12,7 +11,6 @@ describe("Basic function", () => {
       'users'
     )
   })
-
   it("Ignores a non-matching route.", () => {
     nodeIsEmpty(
       <Router path='/users'>
@@ -20,7 +18,6 @@ describe("Basic function", () => {
       </Router>
     )
   })
-
   it("Renders a matching route and ignores a non-matching route.", () => {
     nodeTextIs(
       <Router path='/users'>
@@ -30,5 +27,4 @@ describe("Basic function", () => {
       'users'
     )
   })
-
 })
