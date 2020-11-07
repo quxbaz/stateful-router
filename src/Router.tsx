@@ -1,12 +1,12 @@
-import React, {ReactNode, FunctionComponent} from 'react'
+import React, {FunctionComponent} from 'react'
 import RouterContext from './RouterContext'
 
 interface Props {
   children?: any,
-  path: string,
+  path?: string,
 }
 
-const Router:FunctionComponent<Props> = ({children, path}) => (
+const Router: FunctionComponent<Props> = ({children, path}) => (
   <RouterContext.Provider value={path}>
     {children}
   </RouterContext.Provider>

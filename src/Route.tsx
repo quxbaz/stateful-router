@@ -7,7 +7,7 @@ interface Props {
   route?: string | string[],
 }
 
-const Route:FunctionComponent<Props> = ({children, route}) => {
+const Route: FunctionComponent<Props> = ({children, route}) => {
   if (route == null || route === '')
     return children
   if (typeof route === 'string')
