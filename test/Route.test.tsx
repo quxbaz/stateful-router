@@ -1,10 +1,15 @@
-import React from 'react'
-import {render, unmountComponentAtNode} from 'react-dom'
+import React, {FunctionComponent} from 'react'
+import {render} from 'react-dom'
 import {Router, Route} from '../src'
 import {nodeTextIs, nodeIsEmpty} from './test-util'
 
-const User = ({id}) => <div>{id}</div>
-const Person = ({name, age}) => <div>{name},{age}</div>
+interface User {id?: string}
+const User: FunctionComponent<User> = ({id}) => <div>{id}</div>
+
+interface Person {name?: string, age?: string}
+const Person: FunctionComponent<Person> = ({name, age}) => <div>{name},{age}</div>
+
+const div = () => document.createElement('div')
 
 describe("Route", () => {
   it("Matches a param.", () => {
@@ -59,7 +64,7 @@ describe("Route", () => {
     )
   })
   it("Captures and renders 2 params.", () => {
-    const Account = ({id, name}) => <div>{id},{name}</div>
+    const Account = ({id, name}: {id?: string, name?: string}) => <div>{id},{name}</div>
     nodeTextIs(
       <Router path='/users/42/bob'>
         <Route route='/users/:id/:name'>
@@ -85,24 +90,19 @@ describe("Route", () => {
 })
 
 describe("Route: smoke tests: rendering into DOM", () => {
-  const dom = document.getElementById('test-area')
-  afterEach(() => {
-    unmountComponentAtNode(dom)
-    dom.innerHTML = ''
-  })
   it("Renders matching route.", () => {
     render(
       <Router path='/'>
         <Route route='/'>Empty</Route>
         <Route route='/lists'>/lists</Route>
       </Router>,
-      dom
+      div()
     )
   })
   it("Renders nothing.", () => {
     render(
       <Route route='/'>Empty</Route>,
-      dom
+      div()
     )
   })
   it("Renders nothing.", () => {
@@ -110,7 +110,7 @@ describe("Route: smoke tests: rendering into DOM", () => {
       <Router path='/nowhere'>
         <Route route='/'>Empty</Route>,
       </Router>,
-      dom
+      div()
     )
   })
   it("Renders nothing.", () => {
@@ -119,7 +119,7 @@ describe("Route: smoke tests: rendering into DOM", () => {
         <Route route='/'>Empty</Route>
         <Route route='/lists'>/lists</Route>
       </Router>,
-      dom
+      div()
     )
   })
   it("Renders nothing.", () => {
@@ -129,7 +129,7 @@ describe("Route: smoke tests: rendering into DOM", () => {
           <Route route='/'>Empty</Route>,
         </Router>
       </div>,
-      dom
+      div()
     )
   })
 })
