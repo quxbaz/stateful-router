@@ -1,4 +1,6 @@
-[![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/stateful-router)
+[![Travis (.com)](https://img.shields.io/travis/com/quxbaz/stateful-router)](https://travis-ci.com/github/quxbaz/stateful-router)
+[![codecov](https://codecov.io/gh/quxbaz/stateful-router/branch/main/graph/badge.svg?token=8GSO2J2W2H)](https://codecov.io/gh/quxbaz/stateful-router)
+[![npm version](https://img.shields.io/npm/v/stateful-router.svg)](https://www.npmjs.com/package/stateful-router)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://www.mit.edu/~amini/LICENSE.md)
 
 # stateful-router
