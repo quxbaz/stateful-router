@@ -139,7 +139,6 @@ const setUrl = (url) => ({
   payload: url,
 })
 
-
 // app.js
 //
 // Sync the browser's URL with your store state. For
