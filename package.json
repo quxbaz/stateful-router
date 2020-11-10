@@ -38,7 +38,7 @@
   },
   "scripts": {
     "type-check": "tsc --watch --noEmit",
-    "test": "jest --watchAll --coverage --no-cache",
+    "test": "jest --watchAll",
     "test-ci": "jest --coverage --no-cache",
     "build": "tsc",
     "prepublishOnly": "npm run build",
