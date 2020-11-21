@@ -1,6 +1,6 @@
 {
   "name": "stateful-router",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Tiny, declarative, unopinionated, library-agnostic state-based router for React apps.",
   "author": "quxbaz",
   "license": "MIT",
