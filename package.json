@@ -38,9 +38,9 @@
   },
   "scripts": {
     "type-check": "tsc --watch --noEmit",
-    "test": "jest --watchAll",
+    "test": "jest --watch",
     "test:ci": "jest --coverage --no-cache",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "prepublishOnly": "npm run build",
     "postpublish": "rm -r lib/"
   }
